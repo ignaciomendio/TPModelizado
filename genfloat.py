@@ -22,11 +22,10 @@ class GenomaF:
         return len(self.gens)
     
     def mutate(self, p: float) -> None:
-        #Muta los genes del Objeto con probabilidad p de mutar cada gen, la mutacion es un factor 
-        #multiplicativo normal con media 1 y desvio 0.3
+        #Muta los genes del Objeto con probabilidad p de mutar cada gen
         for i in range(len(self.gens)):
             if rn.random() < p:
-                self.gens[i] = self.gens[i] * np.random.normal(1.0, 0.2)
+                self.gens[i] = self.gens[i] + np.random.normal()
 
 def rand_GenomaF(size: int)->GenomaF:
     #Funcion que genera un Objeto genoma inicializado aleatoriamente
